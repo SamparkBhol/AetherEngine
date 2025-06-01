@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%; /* Very Dark Blue - Engine Background */
+    --foreground: 210 40% 98%; /* Light Gray/White - Text */
+
+    --card: 220 20% 15%; /* Slightly Lighter Dark Blue - UI Panels */
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 190 80% 50%; /* Cyan/Teal - Accent Color */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 15% 25%; /* Medium Dark Blue - Borders, Secondary Panels */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 15% 30%;
+    --muted-foreground: 220 10% 60%; /* Muted Text */
+
+    --accent: 190 80% 60%; /* Lighter Cyan/Teal */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%; /* Darker Red for Destructive Actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 25%; /* Borders */
+    --input: 220 15% 20%; /* Input Backgrounds */
+    --ring: 190 80% 55%; /* Focus Ring */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark theme is default */
+    --background: 220 20% 10%;
+    --foreground: 210 40% 98%;
+    --card: 220 20% 15%;
+    --card-foreground: 210 40% 95%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 190 80% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 15% 30%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 190 80% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 25%;
+    --input: 220 15% 20%;
+    --ring: 190 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Using a common sans-serif font */
+  }
+  
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  .glassmorphic-panel {
+    @apply bg-card/70 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom scrollbar for a modern look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-secondary/50; 
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/70 rounded-md;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
